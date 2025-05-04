@@ -1,7 +1,10 @@
 {
   "expo": {
     "name": "FortifyNow",
-    "slug": "FortifyNow",
+    "notification": {
+      "sounds": ["siren.mp3"]
+    },
+    "slug": "fortifynow",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
@@ -12,6 +15,15 @@
       "supportsTablet": true
     },
     "android": {
+      "package": "com.yourname.fortifynow",
+      "permissions": [
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_BACKGROUND_LOCATION"
+      ],
+      "notification": {
+        "sound": "siren.mp3",
+        "defaultSound": false
+      },
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
@@ -25,6 +37,16 @@
     "plugins": [
       "expo-router",
       [
+        "expo-notifications",
+        {
+          "icon": "./assets/images/notification-icon.png",
+          "color": "#FF6347",
+          "sounds": [
+            "./assets/sound/siren.mp3"
+          ]
+        }
+      ],
+      [
         "expo-splash-screen",
         {
           "image": "./assets/images/splash-icon.png",
@@ -36,6 +58,15 @@
     ],
     "experiments": {
       "typedRoutes": true
-    }
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "e6620805-9605-40df-954b-1ddca3d6dc70"
+      }
+    },
+    "owner": "varuns2196"
   }
 }
